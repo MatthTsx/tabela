@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    body{
+        @apply bg-neutral-900
+    }
+    * > * {
+        font-family: 'Arial';
+        @apply text-white;
+    }
+}
