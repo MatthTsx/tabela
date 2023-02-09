@@ -22,7 +22,7 @@ const Home: NextPage = () => {
                 <div className='flex items-center justify-between space-x-32 shadow-3xl border-b-2 border-white/20
                 px-6'>
                   {tabs_divs.map((t,i) => (
-                    <button className={`_tab ${Tab == i ?
+                    <button key={i} className={`_tab ${Tab == i ?
                     'text-white cursor-default'
                     :'_tab-hover'} transition-all`}
                     onClick={() => setTab(i)}>
