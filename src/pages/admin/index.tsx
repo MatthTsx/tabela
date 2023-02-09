@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Criar_Ano from '../../components/admin/Criar_Ano'
 import Horarios from '../../components/admin/horarios'
 import Mudar_Ano from '../../components/admin/Mudar_Ano'
@@ -7,7 +7,7 @@ import { api } from '../../utils/api'
 
 function index() {
   const Ano = api.Admin.createYear.useMutation()
-  const [Tab,setTab] = React.useState<number>(0)
+  const [Tab,setTab] = useState<number>(0)
 
   const tabs_divs = ["Horarios","Criar Ano","Modificar Ano"]
 
