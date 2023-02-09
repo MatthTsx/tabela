@@ -6,9 +6,9 @@ import Title from '../../layout/Title'
 import { api } from '../../utils/api'
 import type {NextPage} from "next"
 
-const index: NextPage = () => {
+const Home: NextPage = () => {
   const Ano = api.Admin.createYear.useMutation()
-  const [Tab,setTab] = useState<number>(0)
+  const [Tab,setTab] = useState(0)
 
   const tabs_divs = ["Horarios","Criar Ano","Modificar Ano"]
 
@@ -44,4 +44,4 @@ const index: NextPage = () => {
   )
 }
 
-export default index
+export default Home
