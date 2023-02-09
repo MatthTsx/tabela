@@ -93,3 +93,4 @@ model ano {
   posibleMaterias Materia[] @relation(fields: [materiasId], references: [id])
   materiasId      String[]  @db.ObjectId
 }
+

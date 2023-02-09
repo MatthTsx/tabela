@@ -16,4 +16,8 @@
     ._tab-hover{
         @apply transition-all hover:scale-105 hover:text-white/60
     }
+    ._input{
+        @apply px-2 rounded-full bg-transparent tracking-wider text-sm outline-none
+        transition-all text-white/80 placeholder-shown:no-underline underline
+    }
 }

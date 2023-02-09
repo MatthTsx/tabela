@@ -3,11 +3,9 @@ import Criar_Ano from '../../components/admin/Criar_Ano'
 import Horarios from '../../components/admin/horarios'
 import Mudar_Ano from '../../components/admin/Mudar_Ano'
 import Title from '../../layout/Title'
-import { api } from '../../utils/api'
 import type {NextPage} from "next"
 
 const Home: NextPage = () => {
-  const Ano = api.Admin.createYear.useMutation()
   const [Tab,setTab] = useState(0)
 
   const tabs_divs = ["Horarios","Criar Ano","Modificar Ano"]
