@@ -4,8 +4,9 @@ import Horarios from '../../components/admin/horarios'
 import Mudar_Ano from '../../components/admin/Mudar_Ano'
 import Title from '../../layout/Title'
 import { api } from '../../utils/api'
+import type {NextPage} from "next"
 
-function index() {
+const index: NextPage = () => {
   const Ano = api.Admin.createYear.useMutation()
   const [Tab,setTab] = useState<number>(0)
 
