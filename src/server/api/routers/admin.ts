@@ -8,7 +8,12 @@ export const AdminRouter = createTRPCRouter({
         .mutation(({ ctx, input }) => {
             return ctx.prisma.ano.create({
                 data:{
-                    ano: input.name
+                    ano: input.name,
+                    Tabela:{
+                        create:{
+                            
+                        }
+                    }
                 }
             })
         })

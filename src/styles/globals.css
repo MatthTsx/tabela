@@ -10,4 +10,10 @@
         font-family: 'Arial';
         @apply text-white;
     }
+    ._tab{
+        @apply tracking-widest uppercase text-white/40
+    }
+    ._tab-hover{
+        @apply transition-all hover:scale-105 hover:text-white/60
+    }
 }
