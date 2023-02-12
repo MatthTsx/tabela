@@ -1,5 +1,5 @@
 import React from 'react'
-import TabelaProvider from '../TabelaProvider'
+import TabelaProvider from '../Table/TabelaProvider'
 
 function Horarios() {
 

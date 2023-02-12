@@ -19,5 +19,34 @@ export const ComunsRooter = createTRPCRouter({
                 },
                 select:{ segunda:true, terca:true, quarta:true, quinta:true, sexta:true }
             })
+        }),
+    GetByDay: publicProcedure
+        .input(z.object({ id: z.string(), day: z.string() }))
+        .query(({ ctx, input }) => {
+            const activate = {
+                segunda: input.day == "segunda" ? true : false,
+                terca: input.day == "terça" ? true : false,
+                quarta: input.day == "quarta" ? true : false,
+                quinta: input.day == "quinta" ? true : false,
+                sexta: input.day == "sexta" ? true : false,
+            }
+            return ctx.prisma.tabela.findFirst({
+                where:{
+                    Ano:{
+                        some:{
+                            id: input.id
+                        }
+                    }
+                },
+                select: activate
+            })
+        }),
+    GetMaterias: publicProcedure
+        .input(z.object({id: z.string() }))
+        .query(({ ctx, input }) => {
+            return ctx.prisma.ano.findUnique({
+                where:{id: input.id},
+                select:{posibleMaterias:true}
+            })
         })
 })

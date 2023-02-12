@@ -33,9 +33,6 @@
 
         @apply text-transparent bg-clip-text;
     }
-    ._day-activate p:hover{
-        background-position: 0% 0%;
-    }
     ._day-activate{
         background: linear-gradient(
             to top,
@@ -46,7 +43,7 @@
         background-position: 0% 110%;
         transition: all ease-out 250ms;
     }
-    ._day-activate:hover{
+    ._day-activate:hover p, ._day-activate:hover{
         background-position: 0% 0%;
     }
 }

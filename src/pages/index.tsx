@@ -1,8 +1,8 @@
 import { type NextPage } from "next";
 import { api } from "../utils/api";
 import Title from "../layout/Title";
-import Tabela from "../components/Tabela";
-import TabelaProvider from "../components/TabelaProvider";
+import Tabela from "../components/Table/Tabela";
+import TabelaProvider from "../components/Table/TabelaProvider";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
