@@ -20,4 +20,33 @@
         @apply px-2 rounded-full bg-transparent tracking-wider text-sm outline-none
         transition-all text-white/80 placeholder-shown:no-underline underline
     }
+    ._day-activate p{
+        color: rgba(0,0,0,0) !important;
+        background: linear-gradient(
+            to top,
+            white 0% 50%,
+            black 50% 200%
+        );
+        background-size: 100% 200%;
+        background-position: 0% 110%;
+        transition: all ease-out 250ms;
+
+        @apply text-transparent bg-clip-text;
+    }
+    ._day-activate p:hover{
+        background-position: 0% 0%;
+    }
+    ._day-activate{
+        background: linear-gradient(
+            to top,
+            black 0% 50%,
+            white 50% 200%
+        ) no-repeat;
+        background-size: 100% 200%;
+        background-position: 0% 110%;
+        transition: all ease-out 250ms;
+    }
+    ._day-activate:hover{
+        background-position: 0% 0%;
+    }
 }

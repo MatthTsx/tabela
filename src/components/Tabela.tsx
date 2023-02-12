@@ -1,29 +1,29 @@
-import React from 'react'
+import React, { Dispatch } from 'react'
 
-function Tabela() {
-    const coisa = {
-        segunda: {
-            name: "segunda",
-            horario: ["Historia","Goku","e","w","","azul"]
-        },
-        terca:{
-            name:"terça",
-            horario: ["","",""]
-        },
-        quarta:{
-            name:"quarta",
-            horario: ["","",""]
-        },
-        quinta:{
-            name:"terça",
-            horario: ["","",""]
-        },
-        sexta:{
-            name:"terça",
-            horario: ["","",""]
-        },
-    }
-    const arry = [coisa.segunda,coisa.terca,coisa.quarta,coisa.quarta,coisa.sexta]
+interface Props{
+    data: {
+        segunda: String[],
+        terca: String[],
+        quarta: String[],
+        quinta: String[],
+        sexta: String[]
+    } | null | undefined,
+    editable: Boolean,
+    id: String,
+    func: React.Dispatch<React.SetStateAction<Boolean>> | null,
+    func2: React.Dispatch<React.SetStateAction<String>> | null,
+}
+
+function Tabela({ data, editable, func, func2 }:Props) {
+
+    const arry = [
+        { name:"segunda", horario: data?.segunda || [""]},
+        { name:"terça",   horario: data?.terca || [""]},
+        { name:"quarta",  horario: data?.quarta || [""]},
+        { name:"quinta",  horario: data?.quinta || [""]},
+        { name:"sexta",   horario: data?.sexta  || [""]},
+    ]
+
     const horas = [
         "07:30 - 08:20",
         "08:20 - 09:10",
@@ -47,12 +47,22 @@ function Tabela() {
             </div>
         {arry.map((day,index) => (
             <div key={index} className="w-32">
-                <p className='tracking-widest font-semibold text-white text-center border-2 border-white/20
-                shadow-xl hover:text-blue-300'>{day.name}</p>
+                <button className={`tracking-widest font-semibold text-white text-center border-2 border-white/20
+                shadow-xl hover:text-blue-300 w-full ${editable && '_day-activate'}`} onClick={() => {
+                    if(func == null || editable == false || func2 == null) return
+                    func2(day.name)
+                    func(true)
+                }}>
+                    <p className=''>
+                        {day.name}
+                    </p>
+                </button>
                 {[...Array(8)].map((ar,i) => (
-                    <p key={i} className="min-h-[2rem] shadow-lg border-b-[1px] text-white/70
-                    border-white/20 text-center items-center justify-center flex">
-                        {day.horario[i]}</p>
+                    <div className='relative group'>
+                        <p key={i} className={`min-h-[2rem] shadow-lg border-b-[1px] text-white/70
+                        border-white/20 text-center items-center justify-center flex`}>
+                            {day.horario[i]}</p>
+                    </div>
                 ))}
             </div>
         ))}
