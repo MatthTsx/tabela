@@ -44,9 +44,15 @@ export const ComunsRooter = createTRPCRouter({
     GetMaterias: publicProcedure
         .input(z.object({id: z.string() }))
         .query(({ ctx, input }) => {
+            if(input.id == "") return null
             return ctx.prisma.ano.findUnique({
                 where:{id: input.id},
                 select:{posibleMaterias:true}
             })
+        }),
+    GetAllMaterias: publicProcedure.query(({ ctx }) => {
+        return ctx.prisma.materia.findMany({
+            select:{materias:true, id:true}
         })
+    })
 })
