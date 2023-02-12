@@ -19,7 +19,7 @@ function TabelaProvider({editable}:{editable:Boolean}) {
   return (
     <div className='w-[75%] flex flex-col items-center'>
         {editMode && YearSelected!="" ? 
-        <EditTabela id={YearSelected as string} day={selectedDay as string}/>
+        <EditTabela id={YearSelected} day={selectedDay as string}/>
         :
         <>
         <div className='h-24 flex w-[65%] gap-1 flex-wrap'>

@@ -32,12 +32,12 @@ function EditTabela({ day, id }:Props) {
                         "group-hover:opacity-20"
                         :"opacity-20 hover:opacity-75"
                         }`}>
-                        <p className={`tracking-wide w-32 text-center transition-all ${selected.index==i &&
+                        <p className={`tracking-wide w-32 text-center transition-all ${selected.index == i &&
                         'text-green-400'
                         }`}
 
                         onMouseOver={(e) => {
-                            scale_buttons(i)
+                            scale_buttons(i as number)
                         }}
                         onClick={() => setSelected({name:clas, index:i})}>
                             {clas != "" ? clas : "Undefined"}
