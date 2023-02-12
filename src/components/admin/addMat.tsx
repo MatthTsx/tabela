@@ -21,7 +21,7 @@ function AddMat({AnoMat, id}: Props) {
             {AllMats?.map((m,i) => (
                 !AnoMat?.posibleMaterias.some(ma => ma.materias == m.materias) &&
                 <div key={i}>
-                    <button onClick={async (e) => {
+                    <button onClick={(e) => {
                         addMat.mutate({ AnoId:id, MatId:m.id })
                         const btn = e.target as HTMLButtonElement
                         btn.hidden = true
@@ -35,7 +35,7 @@ function AddMat({AnoMat, id}: Props) {
         <div>
             <input placeholder='nome da materia' onChange={(e) => setMatName(e.target.value)}
             className="text-black"/>
-            <button onClick={async () => {
+            <button onClick={() => {
                 if(AllMats?.some(m => m.materias == matName)) return
                 create.mutate({ name: matName })
             }}>Criar Materia</button>

@@ -41,7 +41,7 @@ function Mudar_Ano() {
                   removeMat.mutate({ AnoId:YearSelected, MatId:materia.id })
                   const sla = e.target as HTMLButtonElement
                   sla.hidden = true
-                }}>
+                }} key={i}>
                   {materia.materias}
                 </button>
               ))

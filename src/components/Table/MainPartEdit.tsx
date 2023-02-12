@@ -23,9 +23,8 @@ function MainPartEdit({ index,name,id,day, _Day }: Props) {
         </div>
         <div className='flex flex-row flex-wrap w-full px-8 gap-2'>
             {mat?.posibleMaterias.length != 0 ?  mat?.posibleMaterias.map((mate, i) => (
-                <button key={i} onClick={async () => {
-                    await _Day.set(index, mate.materias)
-                    console.log(_Day.obj)
+                <button key={i} onClick={() => {
+                    _Day.set(index, mate.materias)
                     change({id:id as string, day: _Day.obj})
                 }}
                 className="px-4 p-1 bg-gray-500/20 opacity-20 text-sm h-10">
