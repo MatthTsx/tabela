@@ -58,7 +58,7 @@ function Tabela({ data, editable, func, func2 }:Props) {
                     </p>
                 </button>
                 {[...Array(8)].map((ar,i) => (
-                    <div className='relative group'>
+                    <div className='relative group' key={i}>
                         <p key={i} className={`min-h-[2rem] shadow-lg border-b-[1px] text-white/70
                         border-white/20 text-center items-center justify-center flex`}>
                             {day.horario[i]}</p>
