@@ -1,3 +1,4 @@
+import { resolve } from "path"
 
 
 export function scale_buttons(index: number){
@@ -20,4 +21,8 @@ export function disable_buttons(){
         btn.classList.remove("activate")
         btn.classList.remove("sub-activate")
     })
+}
+
+export function sleep(ms:number){
+    return new Promise(resolve => (setTimeout(resolve, ms)))
 }

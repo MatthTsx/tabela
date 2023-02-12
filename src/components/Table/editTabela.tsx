@@ -23,7 +23,7 @@ export class DayObject {
     }
     set(index:number,name:String){
         // @ts-ignore
-        const arry = Array.from(this.obj[this.day])
+        let arry = Array.from(this.obj[this.day])
         arry[index] = name
         // @ts-ignore
         this.obj[this.day] = arry
@@ -37,6 +37,9 @@ function EditTabela({ day, id }:Props) {
     const {data: Classes, isLoading: ClassLoading} = api.Commons.GetByDay.useQuery({ id, day })
     const [selected, setSelected] = useState({name:"",index:null})
     const activ:String = day == "terça" ? 'terca' : day
+
+    //TODO: Loading Screen 1
+    if(ClassLoading) return <p>Loading</p>
 
     // @ts-ignore
     var _Day = globalThis.__Day_True || new DayObject(day, Classes != null && typeof Classes != undefined ? Classes[activ] : [""])
