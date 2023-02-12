@@ -48,7 +48,7 @@ function Tabela({ data, editable, func, func2 }:Props) {
         {arry.map((day,index) => (
             <div key={index} className="w-32">
                 <button className={`tracking-widest font-semibold text-white text-center border-2 border-white/20
-                shadow-xl hover:text-blue-300 w-full ${editable && '_day-activate'}`} onClick={async () => {
+                shadow-xl hover:text-blue-300 w-full ${editable && '_day-activate'}`} onClick={() => {
                     if(func == null || editable == false || func2 == null) return
                     globalThis.__Day_True = undefined
                     func2(day.name)

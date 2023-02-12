@@ -23,7 +23,7 @@ export class DayObject {
     }
     set(index:number,name:String){
         // @ts-ignore
-        let arry = Array.from(this.obj[this.day])
+        const arry = Array.from(this.obj[this.day])
         arry[index] = name
         // @ts-ignore
         this.obj[this.day] = arry
