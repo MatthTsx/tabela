@@ -80,7 +80,7 @@ function EditTabela({ day, id }:Props) {
         <style>
             {`
                 .activate{
-                    scale: 1.1;
+                    scale: 1.15;
                     opacity: 1 !important;
                 }
                 .activate p{
