@@ -1,5 +1,5 @@
 # WebSite:
-This is an Scholl project for the PWEB class (https://tabela-etec-perrone.vercel.app)
+This is an School project for the PWEB class (https://tabela-etec-perrone.vercel.app)
 
 # Create T3 App
 
