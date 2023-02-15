@@ -1,8 +1,7 @@
 import { type NextPage } from "next";
 import { api } from "../utils/api";
 import Title from "../layout/Title";
-import Tabela from "../components/Table/Tabela";
-import TabelaProvider from "../components/Table/TabelaProvider";
+import Tabela from "../components/Tabela";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
@@ -12,7 +11,7 @@ const Home: NextPage = () => {
       <Title title={"Tabela"}/>
       <main>
         <div className="w-full flex items-center justify-center h-screen">
-            <TabelaProvider editable={false}/>
+            <Tabela/>
         </div>
       </main>
     </>

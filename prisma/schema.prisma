@@ -80,7 +80,7 @@ model tabela {
 
 model Materia {
   id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  materias String   @unique
+  materias String
   anos     ano[]    @relation(fields: [anosID], references: [id])
   anosID   String[] @db.ObjectId
 }
